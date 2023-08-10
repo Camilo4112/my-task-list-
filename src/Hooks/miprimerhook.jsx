@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import crypto from 'crypto';
 
 const useTaskManager = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    const savedTasks = localStorage.getItem("todo:tasks");
+    const savedTasks = localStorage.getItem('todo:tasks');
     if (savedTasks) {
       setTasks(JSON.parse(savedTasks));
     }
@@ -12,13 +13,14 @@ const useTaskManager = () => {
 
   const saveTasks = (newTasks) => {
     setTasks(newTasks);
-    localStorage.setItem("todo:tasks", JSON.stringify(newTasks));
+    localStorage.setItem('todo:tasks', JSON.stringify(newTasks));
   };
 
-  const createTask = (taskTitle) => {
+  const createTask = (taskTitle, taskDescription) => {
     const newTask = {
       id: crypto.randomUUID(),
       title: taskTitle,
+      description: taskDescription,
       isCompleted: false,
     };
     saveTasks([...tasks, newTask]);
@@ -42,7 +44,21 @@ const useTaskManager = () => {
     saveTasks(updatedTasks);
   };
 
-  return { tasks, createTask, deleteTask, updateTask };
+  const editTask = (taskId, newTitle, newDescription) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          title: newTitle,
+          description: newDescription,
+        };
+      }
+      return task;
+    });
+    saveTasks(updatedTasks);
+  };
+
+  return { tasks, createTask, deleteTask, updateTask, editTask };
 };
 
 export default useTaskManager;

@@ -1,12 +1,13 @@
-import { Header } from "./components/Header";
-import { Tasks } from "./components/Tasks";
-import useTaskManager from "./Hooks/miprimerhook";
+import React from 'react';
+import { Header } from './components/Header/index';
+import { Tasks } from './components/Tasks';
+import useTaskManager from './Hooks/miprimerhook';
 
 function App() {
-  const { tasks, createTask, deleteTask, updateTask } = useTaskManager();
+  const { tasks, createTask, deleteTask, updateTask, editTask } = useTaskManager();
 
-  const handleAddTask = (taskTitle) => {
-    createTask(taskTitle);
+  const handleAddTask = ({ title, description }) => {
+    createTask(title, description);
   };
 
   const handleDeleteTask = (taskId) => {
@@ -17,10 +18,15 @@ function App() {
     const task = tasks.find((task) => task.id === taskId);
     if (task) {
       const updatedTask = {
+        ...task,
         isCompleted: !task.isCompleted,
       };
       updateTask(taskId, updatedTask);
     }
+  };
+
+  const handleEditTask = (taskId, newTitle, newDescription) => {
+    editTask(taskId, newTitle, newDescription);
   };
 
   return (
@@ -30,6 +36,7 @@ function App() {
         tasks={tasks}
         onDelete={handleDeleteTask}
         onComplete={handleToggleTaskCompleted}
+        onEditTask={handleEditTask} // Pasa el manejador de edición de tarea
       />
     </>
   );
