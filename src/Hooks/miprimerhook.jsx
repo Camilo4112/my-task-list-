@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import crypto from 'crypto';
+import { v4 as uuidv4 } from 'uuid';
 
 const useTaskManager = () => {
   const [tasks, setTasks] = useState([]);
@@ -18,7 +18,7 @@ const useTaskManager = () => {
 
   const createTask = (taskTitle, taskDescription) => {
     const newTask = {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       title: taskTitle,
       description: taskDescription,
       isCompleted: false,

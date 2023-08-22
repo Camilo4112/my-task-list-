@@ -36,10 +36,11 @@ function App() {
         tasks={tasks}
         onDelete={handleDeleteTask}
         onComplete={handleToggleTaskCompleted}
-        onEditTask={handleEditTask} // Pasa el manejador de edición de tarea
+        onEditTask={handleEditTask}
       />
     </>
   );
 }
 
 export default App;
+
