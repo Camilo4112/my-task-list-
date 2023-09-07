@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Tasks } from './components/Tasks';
 import Home from './components/Home';
 import Menu from './components/Menu';
+import SobreNosotros from './components/SobreNosotros'; // Importación del componente SobreNosotros
 
 import useTaskManager from './Hooks/miprimerhook';
 
@@ -50,7 +51,7 @@ function App() {
             />
           }
         />
-        <Route path="/sobre-nosotros" element={<div>Página Sobre Nosotros</div>} />
+        <Route path="/sobre-nosotros" element={<SobreNosotros />} /> {/* Nueva ruta para SobreNosotros */}
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Menu.module.css'; // Asegúrate de importar tus estilos
+import styles from './Menu.module.css';
 
 function Menu() {
   return (
@@ -21,4 +21,3 @@ function Menu() {
 }
 
 export default Menu;
-
