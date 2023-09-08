@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './tasks.module.css';
 import { Task } from '../Task';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
 
-export function Tasks({ tasks, onDelete, onComplete, onEditTaskTitle, onEditTask }) {
+function Tasks({ tasks, onDelete, onComplete, onEditTaskTitle, onEditTask }) {
   const tasksQuantity = tasks.length;
   const completedTasks = tasks.filter(task => task.isCompleted).length;
 
@@ -29,7 +28,7 @@ export function Tasks({ tasks, onDelete, onComplete, onEditTaskTitle, onEditTask
             onDelete={onDelete}
             onComplete={onComplete}
             onEditTaskTitle={onEditTaskTitle}
-            onEditTask={onEditTask} // Pasa el manejador de edición de tarea
+            onEditTask={onEditTask}
           />
         ))}
       </div>
@@ -37,3 +36,4 @@ export function Tasks({ tasks, onDelete, onComplete, onEditTaskTitle, onEditTask
   );
 }
 
+export default Tasks;

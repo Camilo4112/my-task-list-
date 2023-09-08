@@ -68,7 +68,7 @@ export function Task({ task, onDelete, onComplete, onEditTaskTitle, onEditTask }
       ) : (
         <div className={styles.taskContent}>
           <p className={task.isCompleted ? styles.textCompleted : ''} onClick={handleToggleDescription}>
-            {task.title}
+            {typeof task.title === 'string' ? task.title : 'Invalid Title'}
           </p>
           {showDescription && (task.description ? (
             <div className={styles.descriptionBox}>
@@ -92,5 +92,6 @@ export function Task({ task, onDelete, onComplete, onEditTaskTitle, onEditTask }
     </div>
   );
 }
+
 
 

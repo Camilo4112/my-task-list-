@@ -1,11 +1,14 @@
-.homeContainer {
-    background-color: #4cddf0; /* Fondo llamativo */
-    padding: 50px; /* Espaciado interno */
-    text-align: center; /* Centrar el contenido */
-  }
-  
-  h1 {
-    font-size: 36px;
-    color: #ffffff; /* Color del texto */
-  }
-  
+.home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.home p {
+  font-size: 18px;
+  color: #555555;
+}

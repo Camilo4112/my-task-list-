@@ -1,14 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './components/Header';
-import { Tasks } from './components/Tasks';
-import Home from './components/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Menu from './components/Menu';
-import SobreNosotros from './components/SobreNosotros'; // Importación del componente SobreNosotros
-
+import Home from './components/Home';
+import Tasks from './components/Tasks';
+import SobreNosotros from './components/SobreNosotros';
 import useTaskManager from './Hooks/miprimerhook';
-
-import './styles/global.css';
+import { Header } from './components/Header'; // Asegúrate de importar Header
 
 function App() {
   const { tasks, createTask, deleteTask, updateTask, editTask } = useTaskManager();
@@ -40,19 +37,24 @@ function App() {
     <Router>
       <Menu />
       <Routes>
+        <Route exact path="/" element={<Home />} />
+
         <Route
           path="/tareas"
           element={
-            <Tasks
-              tasks={tasks}
-              onDelete={handleDeleteTask}
-              onComplete={handleToggleTaskCompleted}
-              onEditTask={handleEditTask}
-            />
+            <>
+              <Header handleAddTask={handleAddTask} />
+              <Tasks
+                tasks={tasks}
+                onDelete={handleDeleteTask}
+                onComplete={handleToggleTaskCompleted}
+                onEditTask={handleEditTask}
+              />
+            </>
           }
         />
-        <Route path="/sobre-nosotros" element={<SobreNosotros />} /> {/* Nueva ruta para SobreNosotros */}
-        <Route path="/" element={<Home />} />
+
+        <Route path="/sobre-nosotros" element={<SobreNosotros />} />
       </Routes>
     </Router>
   );
