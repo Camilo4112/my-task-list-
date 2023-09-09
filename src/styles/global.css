@@ -15,3 +15,8 @@ body {
 button {
   cursor: pointer;
 }
+
+.chakra-ui-dark {
+  background-color: #191919;
+  color: #f2f2f2;
+}

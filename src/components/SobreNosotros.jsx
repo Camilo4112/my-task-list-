@@ -4,6 +4,7 @@ function SobreNosotros() {
   return (
     <div>
       <h2>Sobre Nosotros</h2>
+      <br />
       <p>
         Bienvenidos a "Remind me to do", una aplicación de tareas simple y efectiva para ayudarte a mantener un registro de tus pendientes.
       </p>
@@ -17,6 +18,7 @@ Tus tareas se muestran en una lista organizada, donde cada una puede ser marcada
 
 El menú de navegación en la parte superior derecha te permite cambiar entre diferentes secciones de la aplicación, como la página de inicio, la lista de tareas y una sección de información sobre nosotros.
       </p>
+      <br></br>
       <p>
       Construcción de la Aplicación y Tecnologías Utilizadas:
 La aplicación "Remind Me To Do" está construida utilizando tecnologías web modernas que permiten una experiencia de usuario fluida y atractiva. Estas son algunas de las principales tecnologías utilizadas:

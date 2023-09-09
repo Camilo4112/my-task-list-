@@ -17,7 +17,7 @@ const LoginForm = () => {
 
   return (
     <HStack as="form" spacing={8} align="stretch" width="100%">
-      <img src={LogoPerrito} alt="Logo Perrito" width="110px" height="113px" /> {/* Imagen a la izquierda */}
+      <img src={LogoPerrito} alt="Logo Perrito" width="170px" height="100px" /> {/* Imagen a la izquierda */}
       <VStack spacing={8} align="stretch" width="100%">
         <FormControl>
           <FormLabel>Correo Electrónico</FormLabel>
