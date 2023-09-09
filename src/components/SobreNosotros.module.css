@@ -1,20 +1,21 @@
 .sobreNosotros {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sobreNosotros h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
-  
-  .sobreNosotros p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobreNosotros h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para títulos */
+  margin-bottom: 1rem; /* Espacio entre título y párrafo */
+  color: #333333; /* Color de texto oscuro */
+}
+
+.sobreNosotros p {
+  font-size: 1rem; /* Tamaño de fuente para párrafos */
+  line-height: 1.6; /* Espaciado entre líneas */
+  color: #666666; /* Color de texto gris oscuro */
+  margin-bottom: 1rem; /* Espacio entre párrafos */
+}
